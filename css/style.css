@@ -14,7 +14,7 @@ body {
 .hero {
     padding: 36px;
     color: white;
-    background: #6f3b1f;
+    background: #2d4b2b;
     border-radius: 24px;
 }
 
@@ -26,6 +26,38 @@ body {
 
 .products {
     padding-left: 1.2rem;
+    letter-spacing: 0.12em;
+}
+
+
+.products-section,
+.info {
+    width: fit-content;
+    margin-top: 24px;
+    padding: 24px;
+    background:#2d4b2b;;
+    border-radius: 16px;
+    color: white;
+    
+}
+
+.products-section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.products li {
+    margin-bottom: 12px;
+}
+    
+.info h2 {
+    margin-top: 0;
+    margin-bottom: 4;
+}
+
+.info p {
+    margin-bottom: 0;
+    
 }
 
 button {
@@ -33,7 +65,7 @@ button {
     color: #2f2118;
     font-weight: 700;
     cursor: pointer;
-    background: #ffd166;
+    background: #dcb183;
     border: 0;
     border-radius: 999px;
 }
