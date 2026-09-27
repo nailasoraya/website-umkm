@@ -175,7 +175,6 @@ button:hover {
     margin-bottom: 0;
 }
 
-/* Kontak */
 .contact-section h3 {
     margin-top: 20px;
     margin-bottom: 6px;
@@ -195,7 +194,6 @@ button:hover {
     font-weight: bold;
 }
 
-/* Tentang Kami */
 .about-section p {
     max-width: 750px;
 }
@@ -204,7 +202,6 @@ button:hover {
     padding-left: 24px;
 }
 
-/* Footer */
 .site-footer {
     margin-top: 30px;
     color: white;
@@ -265,4 +262,93 @@ button:hover {
         height: 220px;
         margin: 0 auto;
     }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+figure {
+    margin: 0 0 24px;
+}
+
+figcaption {
+    margin-top: 8px;
+    color: #6b5b52;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption {
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #dccbbc;
+}
+
+.products-section table {
+    margin-top: 16px;
+}
+
+.products-section th {
+    color: #2d4b2b;
+    background: #f3eadf;
+}
+
+.products-section td,
+.products-section th {
+    vertical-align: middle;
+}
+
+.gallery-section {
+    margin-top: 28px;
+    padding: 30px;
+    background: #fffaf3;
+    border: 1px solid #e4d6c6;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(47, 33, 24, 0.06);
+}
+
+.gallery-section h2 {
+    margin-top: 0;
+    color: #2d4b2b;
+}
+
+.gallery-section figure {
+    margin: 20px 0;
+}
+
+.gallery-section figcaption {
+    color: #6b5b52;
+}
+
+.gallery-section audio {
+    width: 100%;
+    max-width: 500px;
+}
+
+.process-image {
+    display: block;
+    width: 300px;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 16px;
+}
+
+.latte-image {
+    display: block;
+    width: 500px;
+    max-width: 100%;
+    border-radius: 16px;
+    margin: 0 auto;
 }
