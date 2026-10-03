@@ -13,3 +13,13 @@ form.addEventListener("submit", (event) => {
     `Pesan: ${data.get("pesan")}`,
   ].join("\n");
 });
+
+const whatsapp = document.getElementById("whatsapp");
+const previewKontak = document.getElementById("preview-kontak");
+
+whatsapp.addEventListener("input", function () {
+    previewKontak.textContent =
+        whatsapp.value
+        ? `Nomor WhatsApp: ${whatsapp.value}`
+        : "";
+});

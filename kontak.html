@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kontak Kopi Nusa - Website UMKM</title>
+    <title>Kontak Secangkir Jeda - Website UMKM</title>
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/form.js" defer></script>
   </head>
@@ -11,18 +11,15 @@
     <a class="skip-link" href="#konten">Lewati ke konten utama</a>
     <header class="site-header">
       <nav class="nav" aria-label="Navigasi utama">
-        <a class="brand" href="index.html">Kopi Nusa</a>
-        <ul>
-          <li><a href="index.html">Beranda</a></li>
-          <li><a href="tentang.html">Tentang Kami</a></li>
-          <li><a href="produk.html">Produk</a></li>
-          <li><a href="galeri.html">Galeri</a></li>
-          <li><a aria-current="page" href="kontak.html">Kontak</a></li>
-        </ul>
+          <a href="index.html">Beranda</a>
+          <a href="tentang.html">Tentang Kami</a>
+          <a href="produk.html">Produk</a>
+          <a href="galeri.html">Galeri</a>
+          <a aria-current="page" href="kontak.html">Kontak</a>
       </nav>
     </header>
     <main id="konten" class="page">
-      <h1>Kontak Kopi Nusa</h1>
+      <h1>Kontak Secangkir Jeda</h1>
       <p>Silakan kirim pertanyaan tentang produk, pesanan, atau kerja sama.</p>
         <form id="form-kontak" action="#" method="post">
             <div class="field">
@@ -65,10 +62,45 @@
             <pre id="preview-form" aria-live="polite">Data form akan muncul setelah tombol dikirim.</pre>
         </section>
 
-        
+        <section class="preferensi-kontak">
+            <h2>Preferensi Kontak</h2>
+
+            <label for="whatsapp">Nomor WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp"
+                placeholder="08xxxxxxxxxx">
+
+            <fieldset>
+                <legend>Waktu yang nyaman untuk dihubungi</legend>
+
+                <label>
+                    <input type="radio" name="waktu-kontak" value="pagi">
+                    Pagi (08.00–11.00)
+                </label>
+
+                <label>
+                    <input type="radio" name="waktu-kontak" value="siang">
+                    Siang (11.00–15.00)
+                </label>
+
+                <label>
+                    <input type="radio" name="waktu-kontak" value="sore">
+                    Sore (15.00–18.00)
+                </label>
+            </fieldset>
+
+            <p id="preview-kontak"></p>
+        </section>
+
+
     </main>
+    
     <footer class="site-footer">
-      <p>&copy; 2026 Kopi Nusa. Data pada halaman ini bersifat dummy.</p>
+        <div class="page">
+            <p>
+                &copy; 2026 Secangkir Jeda. UMKM Lokal Pekalongan.
+            </p>
+        </div>
     </footer>
+
   </body>
 </html>
