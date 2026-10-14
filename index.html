@@ -8,20 +8,18 @@
 </head>
 
 <body>
-
-    <a class="skip-link" href="#main-content">Lewati ke konten utama
-    </a>
-
+    <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
     <header class="site-header">
-        <div class="page">
-            <nav class="nav" aria-label="Navigasi utama">
-                <a href="index.html">Beranda</a>
-                <a href="tentang.html">Tentang Kami</a>
-                <a href="produk.html">Produk</a>
-                <a href="galeri.html">Galeri</a>
-                <a href="kontak.html">Kontak</a>
-            </nav>
-        </div>
+        <nav class="nav" aria-label="Navigasi utama">
+            <a class="brand" href="index.html">Secangkir Jeda</a>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main id="main-content" class="page">
@@ -31,7 +29,7 @@
             <div class="hero-content">
                 <p class="eyebrow">UMKM Pekalongan</p>
 
-                <h1>Secangkir Jeda</h1>
+                <h1 id="hero-title">Secangkir Jeda</h1>
 
                 <p>
                     Kopi lokal pilihan untuk teman belajar,
@@ -53,34 +51,43 @@
         </section>
 
 
-        <section class="products-section" aria-labelledby="produk-title">
+   
+        <section class="products" aria-label="Menu Best Seller">
+            <h2>Menu Best Seller</h2>
+                <div class="product-list">
+                    <article class="product-card">
+                        <img src="assets/images/americano.jpeg" alt="Americano">
+                        <h3>Americano</h3>
+                        <p>Rasa klasik dengan aroma kuat untuk teman memulai hari.</p>
+                        <span class="price">Rp15.000</span>
+                    </article>
 
-            <article class="product-card">
+                    <article class="product-card">
+                        <img src="assets/images/matcha.jpg" alt="Matcha Latte">
+                        <h3>Matcha Latte</h3>
+                        <p>Minuman matcha dengan rasa khas yang lembut.</p>
+                        <span class="price">Rp20.000</span>
+                    </article>
 
-                <div class="menu-content">
-
-                    <h2 id="produk-title">
-                        Menu Best Seller
-                    </h2>
-
-                    <ul class="products">
-                        <li>Americano - Rp17.000</li>
-                        <li>Matcha Latte - Rp25.000</li>
-                        <li>Iced Coffee Latte Special Aren - Rp27.000</li>
-                        <li>Butterscotch Latte - Rp27.000</li>
-                        <li>Peanut Butter Coffee - Rp30.000</li>
-                    </ul>
-
+                    <article class="product-card">
+                        <img src="assets/images/butterscotch.jpeg" alt="Butterscotch Latte">
+                        <h3>Butterscotch Latte</h3>
+                        <p>Latte dengan cita rasa butterscotch yang manis.</p>
+                        <span class="price">Rp27.000</span>
+                    </article>
                 </div>
+        </section>
 
-                <img
-                    src="assets/images/frappe.png"
-                    alt="Menu minuman Secangkir Jeda"
-                    class="menu-image"
-                >
-
-            </article>
-
+        <section class="products" aria-label="Menu Baru">
+            <h2>Menu Baru</h2>
+            <div class="product-list">
+                <article class="product-card">
+                    <img src="assets/images/frappe.png" alt="Frappe">
+                    <h3>Iced Coffee Frappe</h3>
+                    <p>Minuman dingin dengan tekstur lembut dan menyegarkan</p>
+                    <span class="price">Rp.20.000</span>
+                </article>
+            </div>
         </section>
 
         <section
