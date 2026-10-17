@@ -13,7 +13,7 @@
         <nav class="nav" aria-label="Navigasi utama">
             <a class="brand" href="index.html">Secangkir Jeda</a>
             <ul>
-                <li><a href="index.html">Beranda</a></li>
+                <li><a aria-current="page" href="index.html">Beranda</a></li>
                 <li><a href="tentang.html">Tentang Kami</a></li>
                 <li><a href="produk.html">Produk</a></li>
                 <li><a href="galeri.html">Galeri</a></li>
@@ -23,38 +23,22 @@
     </header>
 
     <main id="main-content" class="page">
-
-        <section class="hero" id="beranda">
-
+        <section class="hero" aria-labelledby="hero-title">
             <div class="hero-content">
                 <p class="eyebrow">UMKM Pekalongan</p>
-
                 <h1 id="hero-title">Secangkir Jeda</h1>
-
-                <p>
-                    Kopi lokal pilihan untuk teman belajar,
-                    bekerja, dan berdiskusi.
+                <p>Temukan jeda di tengah kesibukan lewat secangkir kopi lokal. Nikmati waktu sejenak untuk beristirahat, mengisi energi, dan kembali melangkah.
                 </p>
-
-                <button id="promoButton" type="button">
-                    Lihat promo hari ini
+                <button id="promoButton" type="button">Lihat promo hari ini
                 </button>
             </div>
-
-            <div class="hero-image">
-                <img
-                    src="assets/images/secangkir_jeda.png"
-                    alt="Foto Secangkir Jeda"
-                >
-            </div>
-
+             </div>
+            <img class="hero-image" src="assets/images/secangkir_jeda.png" alt="Etalase Kopi Nusa berisi kemasan kopi lokal" />
         </section>
 
-
-   
         <section class="products" aria-label="Menu Best Seller">
             <h2>Menu Best Seller</h2>
-                <div class="product-list">
+                <div class="product-grid">
                     <article class="product-card">
                         <img src="assets/images/americano.jpeg" alt="Americano">
                         <h3>Americano</h3>
@@ -66,7 +50,7 @@
                         <img src="assets/images/matcha.jpg" alt="Matcha Latte">
                         <h3>Matcha Latte</h3>
                         <p>Minuman matcha dengan rasa khas yang lembut.</p>
-                        <span class="price">Rp20.000</span>
+                        <span class="price">Rp23.000</span>
                     </article>
 
                     <article class="product-card">
@@ -81,11 +65,13 @@
         <section class="products" aria-label="Menu Baru">
             <h2>Menu Baru</h2>
             <div class="product-list">
-                <article class="product-card">
+                <article class="product-card frappe-card">
                     <img src="assets/images/frappe.png" alt="Frappe">
+                    <div>
                     <h3>Iced Coffee Frappe</h3>
-                    <p>Minuman dingin dengan tekstur lembut dan menyegarkan</p>
-                    <span class="price">Rp.20.000</span>
+                    <p>Minuman dingin dengan tekstur lembut dan menyegarkan.</p>
+                    <p class="price">Rp20.000</p>
+                    </div>
                 </article>
             </div>
         </section>
@@ -99,12 +85,10 @@
             <h2 id="kontak-title">
                 Kontak Singkat
             </h2>
-
             <h3>Lokasi</h3>
             <p>
                 Jl. Kenangan Indah No. 7, Kota Pekalongan
             </p>
-
             <h3>Jam Buka</h3>
             <p>
                 Senin - Jumat: 08.00 - 22.00
@@ -112,13 +96,8 @@
             <p>
                 Sabtu - Minggu: 09.00 - 23.00
             </p>
-
             <h3>Hubungi Kami</h3>
-            <p>
-                Instagram: @SecangkirJeda_
-               
-            </p>
-
+            <a href="https://wa.me/847584729843">Hubungi melalui WhatsApp</a>
         </section>
 
     </main>

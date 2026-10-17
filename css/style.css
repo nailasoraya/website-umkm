@@ -39,7 +39,6 @@ a { color: var(--color-primary); }
 a:hover { color: var(--color-primary-strong); }
 :focus-visible { outline: 3px solid var(--color-focus); outline-offset: 3px; }
 
-
 .skip-link {
   position: absolute;
   top: -5rem;
@@ -49,7 +48,6 @@ a:hover { color: var(--color-primary-strong); }
   background: var(--color-text);
 }
 .skip-link:focus { top: var(--space-3); }
-
 
 .hero {
     padding: 50px;
@@ -61,7 +59,7 @@ a:hover { color: var(--color-primary-strong); }
 
 .hero-content {
     display: inline-block;
-    width: 55%;
+    width: 75%;
     margin-right: 20px;
     font-size: 1rem;
 }
@@ -79,6 +77,7 @@ a:hover { color: var(--color-primary-strong); }
     margin: 0 0 12px;
     font-size: 48px;
     line-height: 1.1;
+    color: white;
 }
 
 .hero-content > p:not(.eyebrow) {
@@ -132,7 +131,7 @@ button:hover {
 .brand {
   display: inline-block;
   margin-bottom: var(--space-2);
-  color: var(--color-text);
+  color: var(--color-primary-strong);
   font-weight: 800;
   text-decoration: none;
 }
@@ -140,10 +139,10 @@ button:hover {
 .nav li { display: inline-block; margin: 0 var(--space-2) var(--space-1) 0; }
 .nav a[aria-current="page"] {
   padding: var(--space-1) var(--space-2);
-  color: var(--color-primary-strong);
+  color: white;
   font-weight: 700;
   text-decoration: none;
-  background: var(--color-focus);
+  background: var(--color-primary-strong);
   border-radius: var(--radius-sm);
 }
 .page { padding-block: var(--space-5); }
@@ -159,7 +158,7 @@ button:focus-visible { outline: 3px solid #dcb183; outline-offset: 3px; }
 
 h1,
 h2,
-h3 { line-height: 1.2; text-wrap: balance; }
+h3 { line-height: 1.2; text-wrap: balance; color: var(--color-primary-strong); }
 h1 { font-size: clamp(2rem, 6vw, 3rem); }
 p,
 li { max-width: 68ch; }
@@ -243,18 +242,17 @@ audio { max-width: 100%; }
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
 }
+
 .product-card img {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     border-radius: 10px;
 }
 
-
-
 .products {
     margin: 0;
-    padding-left: 24px;
+    padding: 0;
 }
 
 .products-section,
@@ -283,7 +281,6 @@ audio { max-width: 100%; }
 
 .contact-section a {
     color:  var(--color-primary);
-    font-weight: bold;
 }
 
 .about-section p {
@@ -398,4 +395,100 @@ td {
     max-width: 100%;
     border-radius: 16px;
     margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: space-between;
+}
+.brand { margin-bottom: 0; }
+.nav ul { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+.nav li { margin: 0; }
+
+.product-card { 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.product-badge {
+    position: absolute;
+    top: -0.75rem;
+    left: var(--space-3);
+    align-self: flex-start;
+    padding: 0.25rem var(--space-3);
+    color: var(--color-surface);
+    font-size: 0.875rem;
+    font-weight: 800;
+    background: var(--color-primary);
+    border-radius: var(--radius-sm);
+}
+.card-actions {
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-4);
+    align-items: center;
+    
+}
+.hero-image { width: 100%; border-radius: var(--radius-md); }
+
+.product-grid,
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-3);
+}
+.gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.gallery-grid figure {
+    margin: 0;
+    padding: var(--space-3);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+}
+
+.gallery-grid img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+}
+
+.frappe-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.frappe-card img {
+  width: 280px;
+  height: auto;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.frappe-badge {
+    position: absolute;
+    top: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.25rem var(--space-3);
+    color: var(--color-surface);
+    font-size: 1rem;
+    font-weight: 800;
+    background: var(--color-primary);
+    border-radius: var(--radius-sm);
 }
