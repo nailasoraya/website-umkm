@@ -1,6 +1,6 @@
 "use strict";
 
-console.log("P09 JavaScript aktif");
+console.log("P10 JavaScript aktif");
 
 const produkUmkm = [
   { nama: "Americano", kategori: "Kopi", harga: 15000, stok: 50, unggulan: true },
@@ -9,28 +9,30 @@ const produkUmkm = [
   { nama: "Salted Caramel Latte", kategori: "Non-kopi", harga: 28000, stok: 0, unggulan: true }
 ];
 
-console.table(produkUmkm);
-
-const formatRupiah = new Intl.NumberFormat("id-ID", {
-  style: "currency",
-  currency: "IDR",
-  maximumFractionDigits: 0,
-});
-
-console.log(formatRupiah.format(produkUmkm[0].harga));
-
+function formatRupiah(nilai) {
+  return new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+    maximumFractionDigits: 0,
+  }).format(nilai);
+}
+console.log(formatRupiah(produkUmkm[0].harga));
 
 function statusStok(stok) {
-  if (stok === 0) {
-    return { label: "Habis", className: "empty" };
+  if (stok <= 0) {
+    return { label: "Habis", className: "warning" };
   }
 
-  if (stok <= 20) {
+  if (stok <= 15) {
     return { label: "Stok terbatas", className: "warning" };
   }
 
   return { label: "Tersedia", className: "" };
 }
+
+console.log(statusStok(0));
+console.log(statusStok(3));
+console.log(statusStok(12));
 
 function labelKategori(kategori) {
   switch (kategori) {
@@ -43,43 +45,51 @@ function labelKategori(kategori) {
   }
 }
 
+function buatKartuProduk(produk) {
+  const status = statusStok(produk.stok);
+  const kategori = labelKategori(produk.kategori);
+  const labelAksi = produk.stok > 0 ? "Siap dipesan" : "Hubungi admin";
+  const badgeUnggulan = produk.unggulan
+    ? '<span class="badge-unggulan">Unggulan</span>'
+    : '';
+
+  return `
+    <article class="js-product-card">
+      ${badgeUnggulan}
+      <h3>${produk.nama}</h3>
+      <p class="category-note">${kategori}</p>
+      <p class="price">${formatRupiah(produk.harga)}</p>
+      <span class="stock-badge ${status.className}">${status.label}</span>
+      <p>${labelAksi}</p>
+    </article>
+  `;
+}
+
+produkUmkm.forEach((produk) => {
+  console.log("Debug produk:", produk.nama, "stok:", produk.stok);
+});
+
 function renderProduk() {
   const grid = document.querySelector("#produk-dinamis");
   const ringkasan = document.querySelector("#produk-ringkasan");
+  const unggulan = document.querySelector("#produk-unggulan");
 
-  if (!grid || !ringkasan) {
+  if (!grid || !ringkasan || !unggulan) {
+    console.warn("Target render produk belum lengkap.");
     return;
   }
 
-  let jumlahTersedia = 0;
-  let markup = "";
+  const produkTersedia = produkUmkm.filter((produk) => produk.stok > 0);
+  const produkUnggulan = produkUmkm.find((produk) => produk.unggulan === true);
+  const markupProduk = produkTersedia.map(buatKartuProduk).join("");
 
-  for (const produk of produkUmkm) {
-    const status = statusStok(produk.stok);
-    const kategori = labelKategori(produk.kategori);
-    const labelAksi = produk.stok > 0 ? "Siap dipesan" : "Hubungi admin";
-    const labelUnggulan = produk.unggulan ? "Best Seller" : "";
+  grid.innerHTML = markupProduk;
+  ringkasan.textContent = `${produkTersedia.length} produk tersedia dari ${produkUmkm.length} data.`;
+  unggulan.textContent = produkUnggulan
+    ? `Produk unggulan: ${produkUnggulan.nama}`
+    : "Belum ada produk unggulan.";
 
-    if (produk.stok > 0) {
-      jumlahTersedia = jumlahTersedia + 1;
-    }
-
-    markup = markup + `
-      <article class="js-product-card">
-        <div class="product-tittle">
-          ${produk.unggulan ? `<span class="badge-unggulan">${labelUnggulan}</span>` : ""}
-          <h3>${produk.nama}</h3>
-        </div>
-        <p>${kategori}</p>
-        <p class="price">${formatRupiah.format(produk.harga)}</p>
-        <span class="stock-badge ${status.className}">${status.label}</span>
-        <p>${labelAksi}</p>
-      </article>
-    `;
-  }
-
-  grid.innerHTML = markup;
-  ringkasan.textContent = `${jumlahTersedia} produk tersedia dari ${produkUmkm.length} data.`;
+  console.table(produkUmkm);
 }
 
 document.addEventListener("DOMContentLoaded", renderProduk);
