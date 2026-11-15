@@ -1,4 +1,3 @@
-// Tombol Promo
 const promoButton = document.querySelector("#promoButton");
 
 if (promoButton) {
